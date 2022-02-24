@@ -11,6 +11,7 @@ public class EmployeesFactory {
                 .firstName(faker.name().firstName())
                 .lastName(faker.name().lastName())
                 .middleName(faker.name().name())
+                .position(faker.educator().course())
                 .build();
     }
 }

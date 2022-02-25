@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class EmployeesTest extends BaseTest{
-    @Test(description = "Add a new employee")
+    @Test(description = "Add a new employee", priority = 1)
     public void addEmployee(){
         employeesPage.open();
         employeesPage.clickAdd();
@@ -18,11 +18,11 @@ public class EmployeesTest extends BaseTest{
         assertEquals(employeesPage.getField(), employees.getLastName(), "Last name is not correct");
     }
 
-    @Test(description = "Delete the employee by ID")
+    @Test(description = "Delete the employee by ID", priority = 2)
     public void deleteEmployeeById(){
         employeesPage.open();
 
-        boolean delete = employeesPage.clickDeleteButton("76");
+        boolean delete = employeesPage.clickDeleteButton("82");
         assertTrue(delete);
     }
     @Test(description = "Update the employee by ID")

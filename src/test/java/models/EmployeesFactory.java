@@ -10,8 +10,8 @@ public class EmployeesFactory {
         return Employees.builder()
                 .firstName(faker.name().firstName())
                 .lastName(faker.name().lastName())
-                .middleName(faker.name().name())
-                .position(faker.educator().course())
+                .middleName(faker.name().firstName())
+                .position(faker.name().firstName())
                 .build();
     }
 }

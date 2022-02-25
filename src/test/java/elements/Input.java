@@ -7,13 +7,14 @@ public class Input {
     WebDriver driver;
     String label;
 
-    String input = "//input[@placeholder='%s']";
+    String input = "//label[text()='%s']/ancestor::div[@class='row']//input";
 
     public Input(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
     }
     public void write(String text){
+        driver.findElement(By.xpath(String.format(input, this.label))).clear();
         driver.findElement(By.xpath(String.format(input, this.label))).sendKeys(text);
     }
 }

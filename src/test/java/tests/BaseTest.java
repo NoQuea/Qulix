@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import pages.BasePage;
 import pages.EmployeesAddPage;
 import pages.EmployeesPage;
+import pages.EmployeesUpdatePage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +19,7 @@ public class BaseTest {
     protected WebDriver driver;
     EmployeesPage employeesPage;
     EmployeesAddPage employeesAddPage;
+    EmployeesUpdatePage employeesUpdatePage;
 
 
     @BeforeMethod(alwaysRun = true)
@@ -31,7 +33,7 @@ public class BaseTest {
 
         employeesPage = new EmployeesPage(driver);
         employeesAddPage = new EmployeesAddPage(driver);
-
+        employeesUpdatePage = new EmployeesUpdatePage(driver);
     }
 
     @AfterMethod(alwaysRun = true)
